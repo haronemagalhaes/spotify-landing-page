@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="./src/styles/vars.css" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <script defer src="./src/scripts/script.js"></script>
+    <script defer>
+        function toggleSidebar() {
+            const sidebar = document.querySelector(".sidebar");
+            sidebar.classList.toggle("closed");
+            const icon = document.querySelector(".sidebar-toggle i");
+            icon.classList.toggle("fa-chevron-left");
+            icon.classList.toggle("fa-chevron-right");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const sidebar = document.querySelector(".sidebar");
+
+            menuToggle.addEventListener("click", function () {
+                sidebar.classList.toggle("active");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Botão Mobile atualizado -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" type="button">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Menu lateral">
+        <div class="sidebar-toggle" onclick="toggleSidebar()">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <nav class="sidebar__navigation">
+            <div class="logo">
+                <a href="#"><img src="src/icons/logo-spotify.png" alt="Logo Spotify" /></a>
+            </div>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i><span>Início</span></a></li>
+                <li><a href="#"><i class="fas fa-search"></i><span>Buscar</span></a></li>
+                <li><a href="#"><i class="fas fa-book"></i><span>Sua Biblioteca</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="section-playlist">
+            <div class="section-playlist__content">
+                <span class="title">Crie sua primeira playlist</span>
+                <span class="subtitle">É fácil, vamos te ajudar.</span>
+                <button class="section-playlist__button" type="button">Criar playlist</button>
+            </div>
+        </div>
+
+        <div class="section-playlist">
+            <div class="section-playlist__content">
+                <span class="title">Que tal seguir um podcast novo?</span>
+                <span class="subtitle">Ficaremos de olho nos novos episódios.</span>
+                <button class="section-playlist__button" type="button">Explore podcasts</button>
+            </div>
+        </div>
+
+        <div class="languages">
+            <button class="languages__button" type="button">
+                <i class="fas fa-globe"></i>
+                <span>Português do Brasil</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="main-container">
+        <!-- Header -->
+        <nav class="header-navigation" aria-label="Navegação principal">
+            <div class="navigation">
+                <button class="arrow-left" type="button"><img src="src/icons/small-left.png" alt="Voltar" /></button>
+                <button class="arrow-right" type="button"><img src="src/icons/small-right.png" alt="Avançar" /></button>
+            </div>
+            <div class="header-search">
+                <img src="src/icons/search.png" alt="Ícone de busca" />
+                <input id="search-input" type="text" placeholder="O que você quer ouvir?" aria-label="Buscar"
+                    maxlength="800" />
+            </div>
+            <div class="header__login">
+                <a href="#">Premium</a>
+                <a href="#">Suporte</a>
+                <a href="#">Baixar</a>
+                <button class="subscribe" type="button">Inscreva-se</button>
+                <button class="login" type="button">Entrar</button>
+            </div>
+        </nav>
+
+        <!-- Músicas em Alta -->
+        <section class="section" aria-label="Músicas em alta">
+            <h2 class="section-title">Músicas em alta</h2>
+            <div class="playlist-grid">
+                <div class="playlist-card"><img src="src/playlist/1.jpeg"
+                        alt="Capa: Escondendo o Ouro" /><span>Escondendo o Ouro</span></div>
+                <div class="playlist-card"><img src="src/playlist/2.png" alt="Capa: FAMOSINHA" /><span>FAMOSINHA</span>
+                </div>
+                <div class="playlist-card"><img src="src/playlist/3.jpeg" alt="Capa: Me Ama Consciente" /><span>Me Ama
+                        Consciente</span></div>
+                <div class="playlist-card"><img src="src/playlist/4.jpeg"
+                        alt="Capa: Ama Um Maloqueiro" /><span>Podcast</span></div>
+                <div class="playlist-card"><img src="src/playlist/5.jpeg" alt="Capa: Treino" /><span>Treino</span></div>
+                <div class="playlist-card"><img src="src/playlist/6.jpeg" alt="Capa: Toma Karen" /><span>Toma
+                        Karen</span></div>
+                <div class="playlist-card"><img src="src/playlist/7.jpeg" alt="Capa: Encosta na Parede" /><span>Encosta
+                        na Parede</span></div>
+            </div>
+        </section>
+
+        <!-- Artistas Populares -->
+        <section class="section" aria-label="Artistas populares">
+            <h2 class="section-title">Artistas populares</h2>
+            <div class="artist-grid">
+                <div class="artist-card"><img src="src/playlist/download.jpeg" alt="Henrique e Juliano" /><span>Henrique
+                        & Juliano</span></div>
+                <div class="artist-card"><img src="src/playlist/jorge e matheus.jpeg" alt="Jorge e Mateus" /><span>Jorge
+                        & Mateus</span></div>
+                <div class="artist-card"><img src="src/playlist/diego.jpeg" alt="Diego e Victor Hugo" /><span>Diego &
+                        Victor Hugo</span></div>
+                <div class="artist-card"><img src="src/playlist/menos e mais (3).jpeg"
+                        alt="Grupo Menos é Mais" /><span>Grupo Menos é Mais</span></div>
+                <div class="artist-card"><img src="src/playlist/matheus.jpeg" alt="Matheus e Kauan" /><span>Matheus &
+                        Kauan</span></div>
+                <div class="artist-card"><img src="src/playlist/ze neto.jpeg" alt="Zé Neto e Cristiano" /><span>Zé Neto
+                        & Cristiano</span></div>
+                <div class="artist-card"><img src="src/playlist/murilo.jpeg" alt="Murilo Huff" /><span>Murilo
+                        Huff</span></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer-expanded" aria-label="Rodapé institucional">
+        <div class="footer-columns">
+            <div class="footer-column">
+                <strong>Empresa</strong>
+                <ul>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Empregos</a></li>
+                    <li><a href="#">For the Record</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <strong>Comunidades</strong>
+                <ul>
+                    <li><a href="#">Para Artistas</a></li>
+                    <li><a href="#">Desenvolvedores</a></li>
+                    <li><a href="#">Publicidade</a></li>
+                    <li><a href="#">Investidores</a></li>
+                    <li><a href="#">Fornecedores</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <strong>Links úteis</strong>
+                <ul>
+                    <li><a href="#">Suporte</a></li>
+                    <li><a href="#">Aplicativo móvel grátis</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <strong>Planos do Spotify</strong>
+                <ul>
+                    <li><a href="#">Premium Individual</a></li>
+                    <li><a href="#">Premium Duo</a></li>
+                    <li><a href="#">Premium Família</a></li>
+                    <li><a href="#">Premium Universitário</a></li>
+                    <li><a href="#">Spotify Free</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Spotify AB</p>
+        </div>
+    </footer>
+</body>
+
+</html>
